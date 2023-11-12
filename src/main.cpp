@@ -6,6 +6,7 @@
 
 int main(int argc, char *argv[])
 {
+    Q_INIT_RESOURCE(resources);
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
 

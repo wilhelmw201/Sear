@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    settingsdialog.cpp \
     src/anydisk.cpp \
     src/copyutil.cpp \
     src/crc32.cpp \
@@ -27,13 +28,16 @@ HEADERS += \
     include/gptpartition.h \
     include/ioworker.h \
     include/mainwindow.h \
-    include/utils.h
+    include/utils.h \
+    settingsdialog.h
 
 FORMS += \
+    settingsdialog.ui \
     src/mainwindow.ui
 
 TRANSLATIONS += \
-    translate/Sear_en_US.ts
+    translate/Sear_en_US.ts \
+    translate/Sear_zh_CN.ts
 CONFIG += lrelease
 CONFIG += embed_translations
 INCLUDEPATH += include
@@ -41,3 +45,6 @@ INCLUDEPATH += include
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

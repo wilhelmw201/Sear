@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>translate/Sear_en_US.qm</file>
+        <file>translate/Sear_en_US.ts</file>
+        <file>translate/Sear_zh_CN.qm</file>
+        <file>translate/Sear_zh_CN.ts</file>
+    </qresource>
+</RCC>

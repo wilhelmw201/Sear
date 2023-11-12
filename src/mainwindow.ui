@@ -54,10 +54,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QPushButton" name="selectFileButton">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>0</height>
+           </size>
           </property>
           <property name="text">
            <string>Select Image</string>
@@ -83,6 +89,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </item>
         <item>
          <widget class="QPushButton" name="selectDriveButton">
+          <property name="minimumSize">
+           <size>
+            <width>50</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="text">
            <string>Select Disk</string>
           </property>
@@ -91,7 +103,14 @@ li.checked::marker { content: &quot;\2612&quot;; }
        </layout>
       </item>
       <item>
-       <widget class="QTextEdit" name="statusDisplay"/>
+       <widget class="QTextEdit" name="statusDisplay">
+        <property name="baseSize">
+         <size>
+          <width>500</width>
+          <height>500</height>
+         </size>
+        </property>
+       </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -137,21 +156,21 @@ li.checked::marker { content: &quot;\2612&quot;; }
         <item>
          <widget class="QPushButton" name="startButton">
           <property name="text">
-           <string>Start</string>
+           <string>🚀Start</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="stopButton">
           <property name="text">
-           <string>Abort</string>
+           <string>🛑Abort</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="settingsButton">
           <property name="text">
-           <string>Settings</string>
+           <string>⚙️Settings</string>
           </property>
          </widget>
         </item>

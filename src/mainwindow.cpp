@@ -42,6 +42,14 @@ MainWindow::MainWindow(QWidget *parent)
     scaleTextByDpi(ui->stopButton);
     scaleTextByDpi(ui->startButton);
 
+    int dpi = QGuiApplication::primaryScreen()->logicalDotsPerInch();
+    resize(QSize(30000/dpi, 20000/dpi));
+    setWindowTitle("Sear");
+    ui->statusDisplay->append(("Sear v0.9"));
+    ui->statusDisplay->append(("www.github.com/wilhelmw201/Sear"));
+
+    // TODO : add more stuff to settings
+    ui->settingsButton->hide();
 
 }
 
@@ -154,7 +162,8 @@ void MainWindow::on_startButton_clicked()
 {
     if (selectedGPTDiskIdx < 0)
     {
-        ui->statusDisplay->append(tr("Select a disk!"));
+        ui->statusDisplay->append(tr("Select a disk first! Stop."));
+        return;
     }
     ui->statusDisplay->append(tr("Attempting to burn %1 onto %2...")
                               .arg(ui->selectFilePathEdit->toPlainText())
@@ -352,5 +361,11 @@ void MainWindow::discoverDrives()
 void MainWindow::on_stopButton_clicked()
 {
     worker.stopCopy();
+}
+
+
+void MainWindow::on_settingsButton_clicked()
+{
+    mySettingsDialog.show();
 }
 

@@ -10,6 +10,7 @@
 #include "copyutil.h"
 #include "ioworker.h"
 #include "qthread.h"
+#include "settingsdialog.h"
 
 // Q_DECLARE_METATYPE(uint64_t)
 
@@ -36,6 +37,8 @@ private slots:
     void copyImageProgress(uint64_t copied);
     void on_stopButton_clicked();
 
+    void on_settingsButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     int selectedGPTDiskIdx = -1;
@@ -50,5 +53,6 @@ private:
     std::unique_ptr<uint8_t[]> draftedTable;
     std::unique_ptr<QThread> copyThread;
     IOWorker worker;
+    SettingsDialog mySettingsDialog;
 };
 #endif // MAINWINDOW_H
